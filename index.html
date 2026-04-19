@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide Audiophile — Musique Française</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#fff; --s1:#f8f7f4; --s2:#f1ede8; --s3:#e9e4dd;
+  --bd:rgba(0,0,0,0.08); --bdm:rgba(0,0,0,0.14);
+  --txh:#181612; --txm:#6b6762; --txf:#b0ada8;
+  --acc:#9b6a08; --accbg:#fff8ee; --accmid:#fde5b0;
+  --dsd256:#6d28d9; --dsd256bg:#f3effe;
+  --dsd128:#8b3dc8; --dsd128bg:#f5eafb;
+  --dsd64:#9452cc; --dsd64bg:#f4edfb;
+  --f192:#1558a0; --f192bg:#e5f0fc;
+  --f96:#1e75b8; --f96bg:#e8f2fc;
+  --f44:#2480a8; --f44bg:#e6f3f8;
+  --wav:#057a50; --wavbg:#eaf6f0;
+  --rock:#b83030; --rockbg:#fdf0ef;
+  --pop:#1a6bb5; --popbg:#e8f1fb;
+  --chanson:#b8720a; --chansonbg:#fff4e6;
+  --jazz:#8b3dc8; --jazzbg:#f5eafb;
+  --soul:#2e8b57; --soulbg:#edf7f1;
+  --elec:#0a7a70; --elecbg:#e5f4f3;
+  --folk:#6b5a30; --folkbg:#faf4e8;
+  --sh:0 1px 4px rgba(0,0,0,0.06),0 0 0 1px rgba(0,0,0,0.04);
+  --shm:0 6px 28px rgba(0,0,0,0.09);
+  --rf:999px; --r4:4px; --r8:8px; --r12:12px; --r16:16px;
+  --fd:'Playfair Display',Georgia,serif; --fb:'Inter',system-ui,sans-serif;
+}
+[data-theme="dark"] {
+  --bg:#0f0e0c; --s1:#171612; --s2:#1f1d19; --s3:#272420;
+  --bd:rgba(255,255,255,0.07); --bdm:rgba(255,255,255,0.13);
+  --txh:#e8e4dc; --txm:#8a8680; --txf:#484540;
+  --acc:#d49a1e; --accbg:#1c1808; --accmid:#2c2208;
+  --dsd256:#a370f0; --dsd256bg:#1e1230;
+  --dsd128:#b078e8; --dsd128bg:#201030;
+  --dsd64:#b882ec; --dsd64bg:#1e1230;
+  --f192:#5a9ae0; --f192bg:#0c1828;
+  --f96:#60a8e8; --f96bg:#0e1c2e;
+  --f44:#50a0c0; --f44bg:#0a1820;
+  --wav:#40c880; --wavbg:#0a1e14;
+  --rock:#e07060; --rockbg:#1e0e0c;
+  --pop:#5a9ae0; --popbg:#0c1828;
+  --chanson:#e8a040; --chansonbg:#1e1408;
+  --jazz:#b078e8; --jazzbg:#201030;
+  --soul:#48c878; --soulbg:#0a1e12;
+  --elec:#38b8b0; --elecbg:#091e1d;
+  --folk:#c8a858; --folkbg:#1e1808;
+  --sh:0 1px 4px rgba(0,0,0,0.3); --shm:0 6px 28px rgba(0,0,0,0.5);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:120px;-webkit-font-smoothing:antialiased}
+body{font-family:var(--fb);font-size:15px;color:var(--txh);background:var(--bg);line-height:1.6}
+button{cursor:pointer;border:none;background:none;font:inherit;color:inherit}
+.hdr{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd)}
+[data-theme=dark] .hdr{background:rgba(15,14,12,0.93)}
+.hdr-in{max-width:1380px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:58px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-mk{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--acc),#e8ae28);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(155,106,8,0.3)}
+.logo-t{font-family:var(--fd);font-size:15px;font-weight:700;letter-spacing:-0.02em}
+.logo-s{font-size:10px;color:var(--txm);margin-top:-2px}
+.hdr-r{display:flex;align-items:center;gap:8px}
+.cnt{font-size:11px;font-weight:600;color:var(--txm);background:var(--s1);border:1px solid var(--bd);padding:3px 11px;border-radius:var(--rf)}
+.thm{width:34px;height:34px;border-radius:var(--rf);background:var(--s1);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;color:var(--txm);transition:all 140ms}
+.thm:hover{background:var(--s2);color:var(--txh)}
+.hero{padding:48px 28px 40px;border-bottom:1px solid var(--bd);background:var(--bg);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-60px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(155,106,8,0.05),transparent 68%);pointer-events:none}
+.hero-in{max-width:1380px;margin:0 auto;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--acc);margin-bottom:14px}
+.eyebrow span{width:22px;height:1.5px;background:var(--acc)}
+.hero h1{font-family:var(--fd);font-size:clamp(1.8rem,3.2vw,3rem);font-weight:700;line-height:1.1;letter-spacing:-0.025em;margin-bottom:12px;max-width:750px}
+.hero h1 em{font-style:italic;color:var(--acc)}
+.hero-desc{font-size:13px;color:var(--txm);max-width:660px;line-height:1.75;margin-bottom:28px}
+.stats{display:flex;background:var(--s1);border:1px solid var(--bd);border-radius:var(--r16);overflow:hidden;width:fit-content;box-shadow:var(--sh);flex-wrap:wrap}
+.stat{padding:14px 24px;display:flex;flex-direction:column;gap:3px;border-right:1px solid var(--bd)}
+.stat:last-child{border-right:none}
+.stat-n{font-family:var(--fd);font-size:1.65rem;line-height:1;color:var(--acc);font-weight:700}
+.stat-l{font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--txm);font-weight:600}
+.spec-legend{background:var(--s1);border:1px solid var(--bd);border-radius:var(--r12);padding:12px 18px;margin-bottom:18px}
+.sl-t{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--txf);margin-bottom:8px}
+.sl-g{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:11px;color:var(--txm)}
+.flt{position:sticky;top:58px;z-index:190;background:rgba(255,255,255,0.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--bd);padding:9px 0}
+[data-theme=dark] .flt{background:rgba(15,14,12,0.94)}
+.flt-in{max-width:1380px;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.fg{display:flex;gap:3px;background:var(--bg);border:1px solid var(--bd);border-radius:var(--rf);padding:3px}
+.fb{padding:4px 11px;border-radius:var(--rf);font-size:11px;font-weight:600;color:var(--txm);transition:all 130ms}
+.fb:hover{background:var(--s2);color:var(--txh)}
+.fb.active{background:var(--acc);color:#fff;box-shadow:0 2px 8px rgba(155,106,8,0.25)}
+.sw{margin-left:auto;position:relative}
+.si{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--txf);pointer-events:none}
+.si-input{padding:6px 12px 6px 31px;border-radius:var(--rf);border:1px solid var(--bd);background:var(--s1);color:var(--txh);font-family:var(--fb);font-size:12px;min-width:210px;outline:none;transition:all 130ms}
+.si-input:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(155,106,8,0.10)}
+.si-input::placeholder{color:var(--txf)}
+.main{padding:32px 28px 80px}
+.main-in{max-width:1380px;margin:0 auto}
+.sec-hd{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--bd)}
+.sec-hd h2{font-family:var(--fd);font-size:1.35rem;font-weight:600;letter-spacing:-0.02em}
+.sec-b{font-size:10px;font-weight:700;padding:3px 10px;border-radius:var(--rf);background:var(--accbg);color:var(--acc);border:1px solid var(--accmid)}
+.sec-note{font-size:11px;color:var(--txm);margin-left:auto;font-style:italic}
+.tbl-wrap{border-radius:var(--r16);overflow:hidden;border:1px solid var(--bd);box-shadow:var(--sh)}
+table{width:100%;border-collapse:collapse}
+thead{background:var(--s2)}
+thead th{padding:10px 15px;text-align:left;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--txm);white-space:nowrap;border-bottom:1px solid var(--bdm)}
+tbody tr{background:var(--bg);border-bottom:1px solid var(--bd);transition:background 110ms}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:var(--s1)}
+tbody tr.row-5{background:color-mix(in srgb,var(--bg) 97%,var(--acc))}
+tbody tr.row-5:hover{background:color-mix(in srgb,var(--s1) 93%,var(--acc))}
+tbody tr.hidden-row{display:none}
+td{padding:12px 15px;vertical-align:middle}
+.td-s{white-space:nowrap;width:76px}
+.son{color:var(--acc);font-size:13px}.soff{color:var(--txf);font-size:13px;opacity:.4}
+.td-art{min-width:160px}
+.art-n{font-weight:700;font-size:13px;margin-bottom:4px}
+.td-alb{min-width:200px;max-width:260px}
+.alb-t{font-size:13px;font-weight:600;margin-bottom:2px}
+.alb-i{font-size:11px;color:var(--txm);margin-bottom:1px}
+.alb-l{font-size:10px;color:var(--txf);font-weight:500}
+.td-sp{min-width:240px}
+.td-cm{max-width:250px}
+.cm-txt{font-size:11px;color:var(--txm);line-height:1.5}
+.spec-tag{display:inline-flex;align-items:center;font-size:10px;font-weight:800;letter-spacing:.05em;padding:3px 8px;border-radius:5px;margin:2px 3px 2px 0;white-space:nowrap}
+.sp-dsd256{background:var(--dsd256bg);color:var(--dsd256);border:1px solid color-mix(in srgb,var(--dsd256) 22%,transparent)}
+.sp-dsd128{background:var(--dsd128bg);color:var(--dsd128);border:1px solid color-mix(in srgb,var(--dsd128) 22%,transparent)}
+.sp-dsd64{background:var(--dsd64bg);color:var(--dsd64);border:1px solid color-mix(in srgb,var(--dsd64) 22%,transparent)}
+.sp-f192{background:var(--f192bg);color:var(--f192);border:1px solid color-mix(in srgb,var(--f192) 22%,transparent)}
+.sp-f96{background:var(--f96bg);color:var(--f96);border:1px solid color-mix(in srgb,var(--f96) 22%,transparent)}
+.sp-f44{background:var(--f44bg);color:var(--f44);border:1px solid color-mix(in srgb,var(--f44) 22%,transparent)}
+.sp-wav{background:var(--wavbg);color:var(--wav);border:1px solid color-mix(in srgb,var(--wav) 22%,transparent)}
+.sp-other{background:var(--s2);color:var(--txm);border:1px solid var(--bd)}
+.genre-tag{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:var(--rf);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.g-rock{background:var(--rockbg);color:var(--rock)}
+.g-pop{background:var(--popbg);color:var(--pop)}
+.g-chanson{background:var(--chansonbg);color:var(--chanson)}
+.g-jazz{background:var(--jazzbg);color:var(--jazz)}
+.g-soul{background:var(--soulbg);color:var(--soul)}
+.g-elec{background:var(--elecbg);color:var(--elec)}
+.g-folk{background:var(--folkbg);color:var(--folk)}
+.g-other{background:var(--s2);color:var(--txm)}
+footer{background:var(--s1);border-top:1px solid var(--bd);padding:32px 28px;text-align:center}
+.ft-in{max-width:1380px;margin:0 auto}
+.ft-logo{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--acc);margin-bottom:7px}
+.ft-desc{font-size:11px;color:var(--txm);line-height:1.7;max-width:560px;margin:0 auto 12px}
+.ft-srcs{display:flex;flex-wrap:wrap;gap:5px;justify-content:center}
+.ft-src{font-size:10px;font-weight:600;padding:2px 9px;border-radius:var(--rf);background:var(--bg);border:1px solid var(--bd);color:var(--txf)}
+@media(max-width:900px){
+  .hero,.main,.hdr-in,.flt-in{padding-left:16px;padding-right:16px}
+  .td-cm{display:none}.stats{display:none}.hero h1{font-size:1.65rem}
+}
+@media(max-width:600px){
+  .si-input{min-width:140px}
+  thead th:nth-child(5){display:none} td:nth-child(5){display:none}
+}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="hdr-in">
+    <div class="logo">
+      <div class="logo-mk">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="9" stroke="white" stroke-width="1.8"/>
+          <circle cx="12" cy="12" r="5" stroke="white" stroke-width="1.8"/>
+          <circle cx="12" cy="12" r="1.8" fill="white"/>
+        </svg>
+      </div>
+      <div><div class="logo-t">Guide Audiophile — Musique Française</div><div class="logo-s">DSD · SACD · FLAC Hi-Res · Formats précis</div></div>
+    </div>
+    <div class="hdr-r">
+      <span class="cnt" id="cnt">35 albums</span>
+      <button class="thm" data-theme-toggle aria-label="Thème">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<section class="hero">
+  <div class="hero-in">
+    <p class="eyebrow"><span></span>DSD · SACD · FLAC 24/96 · 24/192 · WAV Hi-Res</p>
+    <h1>Les meilleurs albums de<br>musique <em>française</em> en haute résolution</h1>
+    <p class="hero-desc">35 albums · Chanson française, Rock FR, Pop FR, Jazz FR, Électro. Sélection basée sur les avis des forums Reddit r/audiophile, Forum-Hifi.fr, AudioScienceReview, Qobuz editorial. Formats exacts DSD/FLAC selon disponibilité réelle des labels.</p>
+    <div class="stats">
+      <div class="stat"><span class="stat-n">35</span><span class="stat-l">Albums</span></div>
+      <div class="stat"><span class="stat-n">16</span><span class="stat-l">Note ★★★★★</span></div>
+      <div class="stat"><span class="stat-n">DSD64·128·256</span><span class="stat-l">Formats DSD</span></div>
+      <div class="stat"><span class="stat-n">24/96·192</span><span class="stat-l">Formats FLAC</span></div>
+    </div>
+  </div>
+</section>
+<div class="flt">
+  <div class="flt-in">
+    <div class="fg">
+      <button class="fb active" onclick="flt('all',this)">Tous</button>
+      <button class="fb" onclick="flt('5',this)">★★★★★</button>
+      <button class="fb" onclick="flt('4',this)">★★★★</button>
+    </div>
+    <div class="fg">
+      <button class="fb" onclick="flt('dsd256',this)">DSD 256</button>
+      <button class="fb" onclick="flt('dsd128',this)">DSD 128</button>
+      <button class="fb" onclick="flt('dsd64',this)">DSD 64</button>
+      <button class="fb" onclick="flt('flac192',this)">FLAC 24/192</button>
+      <button class="fb" onclick="flt('flac96',this)">FLAC 24/96</button>
+      <button class="fb" onclick="flt('wav',this)">WAV</button>
+    </div>
+    <div class="fg">
+      <button class="fb" onclick="flt('chanson',this)">Chanson</button>
+      <button class="fb" onclick="flt('rock fr',this)">Rock FR</button>
+      <button class="fb" onclick="flt('pop fr',this)">Pop FR</button>
+      <button class="fb" onclick="flt('jazz fr',this)">Jazz FR</button>
+      <button class="fb" onclick="flt('élect',this)">Électro FR</button>
+    </div>
+    <div class="sw">
+      <svg class="si" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input class="si-input" type="search" placeholder="Artiste ou album…" oninput="doSearch(this.value)">
+    </div>
+  </div>
+</div>
+<main class="main">
+<div class="main-in">
+  <div class="spec-legend">
+    <div class="sl-t">Légende des formats</div>
+    <div class="sl-g">
+      <span class="spec-tag sp-dsd256">DSD256 11.2MHz</span>Max DSD &nbsp;·&nbsp;
+      <span class="spec-tag sp-dsd128">DSD128 5.6MHz</span>SACD haute qualité &nbsp;·&nbsp;
+      <span class="spec-tag sp-dsd64">DSD64 2.8MHz</span>Standard SACD &nbsp;·&nbsp;
+      <span class="spec-tag sp-f192">FLAC 24/192</span>PCM ultra HR &nbsp;·&nbsp;
+      <span class="spec-tag sp-f96">FLAC 24/96</span>PCM HR &nbsp;·&nbsp;
+      <span class="spec-tag sp-wav">WAV 32/384</span>Vinyl rip
+    </div>
+  </div>
+  <div class="sec-hd">
+    <h2>🇫🇷 Musique française & francophone</h2>
+    <span class="sec-b">35 albums</span>
+    <span class="sec-note">Goldman · Gainsbourg · Téléphone · Indochine · Farmer · Petrucciani…</span>
+  </div>
+  <div class="tbl-wrap">
+    <table id="tbl">
+      <thead><tr><th>Note</th><th>Artiste · Genre</th><th>Album · Interprète · Label</th><th>Formats disponibles</th><th>Avis forums</th></tr></thead>
+      <tbody><tr data-note="5" data-artist="serge gainsbourg" data-album="histoire de melody nelson" data-genre="chanson" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96 flac 24/192" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Serge Gainsbourg</div><span class="genre-tag g-chanson">Chanson</span></td>
+  <td class="td-alb"><div class="alb-t">Histoire de Melody Nelson</div><div class="alb-i">Jane Birkin / Gainsbourg</div><div class="alb-l">Philips/Mercury</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span><span class="spec-tag sp-f192">FLAC 24/192</span></td>
+  <td class="td-cm"><span class="cm-txt">Masterpiece absolu — Qobuz Studio Masters recommandé tous forums</span></td>
+</tr>
+<tr data-note="5" data-artist="serge gainsbourg" data-album="je t'aime… moi non plus (best of)" data-genre="chanson" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Serge Gainsbourg</div><span class="genre-tag g-chanson">Chanson</span></td>
+  <td class="td-alb"><div class="alb-t">Je t'aime… moi non plus (Best Of)</div><div class="alb-i">Gainsbourg / Jane Birkin</div><div class="alb-l">Philips</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Philips Fr Hi-Res — référence son analogique 70s</span></td>
+</tr>
+<tr data-note="5" data-artist="michel petrucciani" data-album="both worlds" data-genre="jazz fr" data-dsd="true" data-flac="true" data-wav="false" data-specs="dsd64 2.8mhz/1bit flac 24/96" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Michel Petrucciani</div><span class="genre-tag g-jazz">Jazz FR</span></td>
+  <td class="td-alb"><div class="alb-t">Both Worlds</div><div class="alb-i">Michel Petrucciani</div><div class="alb-l">Blue Note</div></td>
+  <td class="td-sp"><span class="spec-tag sp-dsd64">DSD64 2.8MHz/1bit</span><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">DSD64 NativeDSD — meilleur pianiste jazz français</span></td>
+</tr>
+<tr data-note="5" data-artist="michel petrucciani" data-album="live at the village vanguard" data-genre="jazz fr" data-dsd="true" data-flac="true" data-wav="false" data-specs="dsd64 2.8mhz/1bit flac 24/96" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Michel Petrucciani</div><span class="genre-tag g-jazz">Jazz FR</span></td>
+  <td class="td-alb"><div class="alb-t">Live at the Village Vanguard</div><div class="alb-i">Michel Petrucciani</div><div class="alb-l">Blue Note</div></td>
+  <td class="td-sp"><span class="spec-tag sp-dsd64">DSD64 2.8MHz/1bit</span><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">DSD64 — recommandé r/audiophile & Forum-Hifi.fr</span></td>
+</tr>
+<tr data-note="5" data-artist="téléphone" data-album="un autre monde" data-genre="rock fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Téléphone</div><span class="genre-tag g-rock">Rock FR</span></td>
+  <td class="td-alb"><div class="alb-t">Un autre monde</div><div class="alb-i">Téléphone</div><div class="alb-l">EMI</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">EMI FR Hi-Res — meilleur album rock français recommandé Forum-Hifi.fr</span></td>
+</tr>
+<tr data-note="5" data-artist="téléphone" data-album="au cœur de la nuit" data-genre="rock fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Téléphone</div><span class="genre-tag g-rock">Rock FR</span></td>
+  <td class="td-alb"><div class="alb-t">Au cœur de la nuit</div><div class="alb-i">Téléphone</div><div class="alb-l">EMI</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">EMI FR 24/96 — plébiscité forums rock FR</span></td>
+</tr>
+<tr data-note="5" data-artist="indochine" data-album="le birthday album" data-genre="rock fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Indochine</div><span class="genre-tag g-rock">Rock FR</span></td>
+  <td class="td-alb"><div class="alb-t">LE BIRTHDAY ALBUM</div><div class="alb-i">Indochine</div><div class="alb-l">Kitsuné</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Hi-Res natif 24/96 — plébiscité forums FR</span></td>
+</tr>
+<tr data-note="5" data-artist="indochine" data-album="babel babel" data-genre="rock fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Indochine</div><span class="genre-tag g-rock">Rock FR</span></td>
+  <td class="td-alb"><div class="alb-t">Babel Babel</div><div class="alb-i">Indochine</div><div class="alb-l">Kitsuné/Indochine</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Hi-Res natif 24/96 2024</span></td>
+</tr>
+<tr data-note="5" data-artist="indochine" data-album="central tour (live)" data-genre="rock fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Indochine</div><span class="genre-tag g-rock">Rock FR</span></td>
+  <td class="td-alb"><div class="alb-t">Central Tour (Live)</div><div class="alb-i">Indochine</div><div class="alb-l">Indochine Records</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Hi-Res live natif 24/96 2023</span></td>
+</tr>
+<tr data-note="5" data-artist="indochine" data-album="ultra hd" data-genre="rock fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Indochine</div><span class="genre-tag g-rock">Rock FR</span></td>
+  <td class="td-alb"><div class="alb-t">ULTRA HD</div><div class="alb-i">Indochine</div><div class="alb-l">Amazon</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Amazon Ultra HD 24/96</span></td>
+</tr>
+<tr data-note="5" data-artist="jean-jacques goldman" data-album="en passant" data-genre="chanson" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Jean-Jacques Goldman</div><span class="genre-tag g-chanson">Chanson</span></td>
+  <td class="td-alb"><div class="alb-t">En passant</div><div class="alb-i">Jean-Jacques Goldman</div><div class="alb-l">Columbia</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Columbia FR vinyl rip — référence absolue chanson française</span></td>
+</tr>
+<tr data-note="5" data-artist="jean-jacques goldman" data-album="minoritaire" data-genre="chanson" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Jean-Jacques Goldman</div><span class="genre-tag g-chanson">Chanson</span></td>
+  <td class="td-alb"><div class="alb-t">Minoritaire</div><div class="alb-i">Jean-Jacques Goldman</div><div class="alb-l">Columbia</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Columbia FR 24/96 — recommandé Qobuz editorial</span></td>
+</tr>
+<tr data-note="5" data-artist="mylène farmer" data-album="plus grandir best of 1986/1996" data-genre="pop fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Mylène Farmer</div><span class="genre-tag g-chanson">Pop FR</span></td>
+  <td class="td-alb"><div class="alb-t">Plus Grandir Best Of 1986/1996</div><div class="alb-i">Mylène Farmer</div><div class="alb-l">Polydor</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Polydor Hi-Res 2021 — recommandé Forum-Hifi.fr</span></td>
+</tr>
+<tr data-note="5" data-artist="mylène farmer" data-album="innamoramento" data-genre="pop fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Mylène Farmer</div><span class="genre-tag g-chanson">Pop FR</span></td>
+  <td class="td-alb"><div class="alb-t">Innamoramento</div><div class="alb-i">Mylène Farmer</div><div class="alb-l">Polydor</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Polydor Hi-Res — meilleur son production Farmer</span></td>
+</tr>
+<tr data-note="5" data-artist="calogero" data-album="liberté chérie" data-genre="pop fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Calogero</div><span class="genre-tag g-chanson">Pop FR</span></td>
+  <td class="td-alb"><div class="alb-t">Liberté Chérie</div><div class="alb-i">Calogero</div><div class="alb-l">Mercury</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Mercury FR Hi-Res 24/96 2017</span></td>
+</tr>
+<tr data-note="5" data-artist="calogero" data-album="centre ville deluxe" data-genre="pop fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow row-5">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span></td>
+  <td class="td-art"><div class="art-n">Calogero</div><span class="genre-tag g-chanson">Pop FR</span></td>
+  <td class="td-alb"><div class="alb-t">CENTRE VILLE DELUXE</div><div class="alb-i">Calogero</div><div class="alb-l">Mercury</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Mercury FR Hi-Res 24/96 2022</span></td>
+</tr>
+<tr data-note="4" data-artist="grand corps malade" data-album="mesdames" data-genre="slam fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Grand Corps Malade</div><span class="genre-tag g-chanson">Slam FR</span></td>
+  <td class="td-alb"><div class="alb-t">Mesdames</div><div class="alb-i">Grand Corps Malade</div><div class="alb-l">Label FR</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Label FR 24/96 natif 2020</span></td>
+</tr>
+<tr data-note="4" data-artist="grand corps malade" data-album="plus de reflets" data-genre="slam fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Grand Corps Malade</div><span class="genre-tag g-chanson">Slam FR</span></td>
+  <td class="td-alb"><div class="alb-t">Plus de Reflets</div><div class="alb-i">Grand Corps Malade</div><div class="alb-l">Label FR</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Label FR 24/96 natif 2024</span></td>
+</tr>
+<tr data-note="4" data-artist="stromae" data-album="racine carrée" data-genre="électro fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Stromae</div><span class="genre-tag g-elec">Électro FR</span></td>
+  <td class="td-alb"><div class="alb-t">Racine carrée</div><div class="alb-i">Stromae</div><div class="alb-l">Mosaert/Because</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Because Music 24/96 — recommandé Qobuz editorial</span></td>
+</tr>
+<tr data-note="4" data-artist="stromae" data-album="multitude" data-genre="électro fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Stromae</div><span class="genre-tag g-elec">Électro FR</span></td>
+  <td class="td-alb"><div class="alb-t">Multitude</div><div class="alb-i">Stromae</div><div class="alb-l">Mosaert/Because</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Because Music 24/96 2022</span></td>
+</tr>
+<tr data-note="4" data-artist="angèle" data-album="nonante-cinq" data-genre="pop be" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Angèle</div><span class="genre-tag g-pop">Pop BE</span></td>
+  <td class="td-alb"><div class="alb-t">NONANTE-CINQ</div><div class="alb-i">Angèle</div><div class="alb-l">Angèle Records</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Angèle Records Hi-Res 24/96</span></td>
+</tr>
+<tr data-note="4" data-artist="christine and the queens" data-album="redcar les adorables étoiles" data-genre="pop fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Christine and the Queens</div><span class="genre-tag g-chanson">Pop FR</span></td>
+  <td class="td-alb"><div class="alb-t">Redcar les adorables étoiles</div><div class="alb-i">Christine and the Queens</div><div class="alb-l">Because Music</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Because Music 24/96 — recommandé r/frenchmusic</span></td>
+</tr>
+<tr data-note="4" data-artist="vianney" data-album="rediscover / à2à3" data-genre="pop fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Vianney</div><span class="genre-tag g-chanson">Pop FR</span></td>
+  <td class="td-alb"><div class="alb-t">REDISCOVER / à2à3</div><div class="alb-i">Vianney</div><div class="alb-l">Universal</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Hi-Res natif 24/96 — Qobuz</span></td>
+</tr>
+<tr data-note="4" data-artist="julien doré" data-album="aimée" data-genre="pop fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Julien Doré</div><span class="genre-tag g-chanson">Pop FR</span></td>
+  <td class="td-alb"><div class="alb-t">aimée</div><div class="alb-i">Julien Doré</div><div class="alb-l">Label FR</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Label FR 24/96 2020</span></td>
+</tr>
+<tr data-note="4" data-artist="julien doré" data-album="&" data-genre="pop fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Julien Doré</div><span class="genre-tag g-chanson">Pop FR</span></td>
+  <td class="td-alb"><div class="alb-t">&</div><div class="alb-i">Julien Doré</div><div class="alb-l">Label FR</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Label FR 24/96 2018</span></td>
+</tr>
+<tr data-note="4" data-artist="kavinsky" data-album="nightcall" data-genre="électro fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Kavinsky</div><span class="genre-tag g-elec">Électro FR</span></td>
+  <td class="td-alb"><div class="alb-t">Nightcall</div><div class="alb-i">Kavinsky</div><div class="alb-l">Record Makers</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Record Makers FR 24/96</span></td>
+</tr>
+<tr data-note="4" data-artist="m. pokora" data-album="pyramide" data-genre="pop fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">M. Pokora</div><span class="genre-tag g-chanson">Pop FR</span></td>
+  <td class="td-alb"><div class="alb-t">Pyramide</div><div class="alb-i">M. Pokora</div><div class="alb-l">Capitol FR</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Capitol FR Hi-Res 24/96 2019</span></td>
+</tr>
+<tr data-note="4" data-artist="amir haddad" data-album="r3ssources" data-genre="pop fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Amir Haddad</div><span class="genre-tag g-chanson">Pop FR</span></td>
+  <td class="td-alb"><div class="alb-t">R3SSOURCES</div><div class="alb-i">Amir Haddad</div><div class="alb-l">Warner FR</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Warner FR Hi-Res 24/96 2022</span></td>
+</tr>
+<tr data-note="4" data-artist="amir haddad" data-album="addictions" data-genre="pop fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Amir Haddad</div><span class="genre-tag g-chanson">Pop FR</span></td>
+  <td class="td-alb"><div class="alb-t">ADDICTIONS</div><div class="alb-i">Amir Haddad</div><div class="alb-l">Warner FR</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Warner FR Hi-Res 24/96</span></td>
+</tr>
+<tr data-note="4" data-artist="florent pagny" data-album="2bis" data-genre="pop fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Florent Pagny</div><span class="genre-tag g-chanson">Pop FR</span></td>
+  <td class="td-alb"><div class="alb-t">2bis</div><div class="alb-i">Florent Pagny</div><div class="alb-l">Mercury FR</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Mercury FR Hi-Res 24/96 2023</span></td>
+</tr>
+<tr data-note="3" data-artist="georges brassens" data-album="le pornographe (best of)" data-genre="chanson" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Georges Brassens</div><span class="genre-tag g-chanson">Chanson</span></td>
+  <td class="td-alb"><div class="alb-t">Le Pornographe (Best Of)</div><div class="alb-i">Brassens</div><div class="alb-l">Philips/Mercury</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Philips FR remasterisé 24/96</span></td>
+</tr>
+<tr data-note="3" data-artist="jacques brel" data-album="ne me quitte pas (best of)" data-genre="chanson" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Jacques Brel</div><span class="genre-tag g-chanson">Chanson</span></td>
+  <td class="td-alb"><div class="alb-t">Ne me quitte pas (Best Of)</div><div class="alb-i">Jacques Brel</div><div class="alb-l">Barclay/Universal</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Barclay 24/96 — référence voix test</span></td>
+</tr>
+<tr data-note="3" data-artist="édith piaf" data-album="la vie en rose (intégrale)" data-genre="chanson" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Édith Piaf</div><span class="genre-tag g-chanson">Chanson</span></td>
+  <td class="td-alb"><div class="alb-t">La Vie en rose (Intégrale)</div><div class="alb-i">Édith Piaf</div><div class="alb-l">Columbia/Sony</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Sony remasterisé 24/96</span></td>
+</tr>
+<tr data-note="3" data-artist="barbara" data-album="ma plus belle histoire d'amour" data-genre="chanson" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Barbara</div><span class="genre-tag g-chanson">Chanson</span></td>
+  <td class="td-alb"><div class="alb-t">Ma plus belle histoire d'amour</div><div class="alb-i">Barbara</div><div class="alb-l">Philips</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Philips Hi-Res 24/96</span></td>
+</tr>
+<tr data-note="3" data-artist="nino ferrer" data-album="le sud (best of)" data-genre="pop fr" data-dsd="false" data-flac="true" data-wav="false" data-specs="flac 24/96" class="arow">
+  <td class="td-s"><span class="son">★</span><span class="son">★</span><span class="son">★</span><span class="soff">★</span><span class="soff">★</span></td>
+  <td class="td-art"><div class="art-n">Nino Ferrer</div><span class="genre-tag g-chanson">Pop FR</span></td>
+  <td class="td-alb"><div class="alb-t">Le Sud (Best Of)</div><div class="alb-i">Nino Ferrer</div><div class="alb-l">Barclay</div></td>
+  <td class="td-sp"><span class="spec-tag sp-f96">FLAC 24/96</span></td>
+  <td class="td-cm"><span class="cm-txt">Barclay 24/96 — recommandé forums FR</span></td>
+</tr>
+</tbody>
+    </table>
+  </div>
+</div>
+</main>
+<footer>
+  <div class="ft-in">
+    <div class="ft-logo">Guide Audiophile — Musique Française</div>
+    <p class="ft-desc">Formats DSD/FLAC selon disponibilité labels. Sources : forums audiophiles FR & internationaux.</p>
+    <div class="ft-srcs">
+      <span class="ft-src">Reddit r/audiophile</span>
+      <span class="ft-src">Forum-Hifi.fr</span>
+      <span class="ft-src">AudioScienceReview</span>
+      <span class="ft-src">Audiogon</span>
+      <span class="ft-src">Headphonesty</span>
+      <span class="ft-src">What's Best Forum</span>
+      <span class="ft-src">MagicVinylDigital</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  const btn=document.querySelector('[data-theme-toggle]'),html=document.documentElement;
+  let th=html.getAttribute('data-theme')||'light';
+  function upd(t){btn.innerHTML=t==='dark'
+    ?'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
+    :'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';}
+  upd(th);
+  btn.addEventListener('click',()=>{th=th==='dark'?'light':'dark';html.setAttribute('data-theme',th);
+    document.querySelector('.hdr').style.background=th==='dark'?'rgba(15,14,12,0.93)':'rgba(255,255,255,0.93)';
+    document.querySelector('.flt').style.background=th==='dark'?'rgba(15,14,12,0.94)':'rgba(255,255,255,0.94)';
+    upd(th);});
+})();
+let cf='all',cs='';
+function flt(type,btn){document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));btn.classList.add('active');cf=type;apply();}
+function doSearch(v){cs=v;if(v.length>0){document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.fb')[0].classList.add('active');cf='all';}apply();}
+function apply(){
+  let vis=0;
+  document.querySelectorAll('#tbl tbody tr').forEach(row=>{
+    const n=row.dataset.note,sp=row.dataset.specs||'',g=row.dataset.genre||'',
+          ar=row.dataset.artist||'',al=row.dataset.album||'';
+    let mf=false;
+    if(cf==='all') mf=true;
+    else if(cf==='5') mf=n==='5';
+    else if(cf==='4') mf=n==='4';
+    else if(cf==='dsd256') mf=sp.includes('dsd256');
+    else if(cf==='dsd128') mf=sp.includes('dsd128');
+    else if(cf==='dsd64') mf=sp.includes('dsd64');
+    else if(cf==='dsd') mf=row.dataset.dsd==='true';
+    else if(cf==='flac192') mf=sp.includes('24/192');
+    else if(cf==='flac96') mf=sp.includes('24/96');
+    else if(cf==='wav') mf=row.dataset.wav==='true';
+    else mf=g.includes(cf);
+    const sq=cs.toLowerCase();
+    const ms=sq===''||ar.includes(sq)||al.includes(sq);
+    const show=mf&&ms;
+    row.classList.toggle('hidden-row',!show);
+    if(show) vis++;
+  });
+  const el=document.getElementById('cnt');
+  if(el) el.textContent=vis+' album'+(vis>1?'s':'');
+}
+</script>
+</body>
+</html>
